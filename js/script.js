@@ -27,7 +27,7 @@ var swiper = new Swiper(".review-slider", {
     loop: true,
     grabCursor: true,
     autoplay: {
-        delay: 7500,
+        delay: 1500,
         disableOnInteraction: false,
     },
     breakpoints: {
