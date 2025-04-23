@@ -11,6 +11,26 @@ window.onscroll = () => {
   navbar.classList.remove('active');
 };
 
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar a');
+
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
 document.querySelectorAll('.image-slider img').forEach(images => {
   images.onclick = () => {
     var src = images.getAttribute('src');
